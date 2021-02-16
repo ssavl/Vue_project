@@ -10,12 +10,14 @@
 
       <div v-for="doctor in doctors"
       :key="doctor.id">
-        {{ doctor.name }}
+        {{ doctor.title }}
+        {{ doctor.text }}
       </div>
 
 
 
     <h1>Конец блока</h1>
+
   </div>
 
 </template>
@@ -23,6 +25,7 @@
 
 
 <script>
+import axios from "axios"
 
 export default {
   name: "ArticleDetail",
@@ -33,12 +36,25 @@ export default {
   },
   data () {
     return {
-      doctors : [
+      doctor_test : [
         {name: 'Stepthan', last_name: 'Pfilonov', id: 1},
         {name: 'Savelii', last_name: 'Stepura', id: 2}
+      ],
+      blahblah: [
+        {},
+        {},
       ]
     }
   },
+  mounted () {
+    axios.get('http://127.0.0.1:8000/articles')
+    .then(response => {
+      console.log(response)
+      this.doctors = response.data
+      console.log(response.data)
+    })
+  }
+
 }
 
 

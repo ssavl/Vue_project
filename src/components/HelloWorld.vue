@@ -34,7 +34,8 @@
 
 
 <script>
-export default {name: 'HelloWorld', props: {
+export default
+{name: 'HelloWorld', props: {
     msg: String,
     test: String,
   }
