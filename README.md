@@ -1,4 +1,5 @@
-# vue-crash
+# Vue_project
+Практикуюсь писать человеческий фронтэнд
 
 ## Project setup
 ```
